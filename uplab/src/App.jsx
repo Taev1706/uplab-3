@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useContext } from "react";
 import { ThemeProvider, ThemeContext } from "./ThemeContext";
 import { CartProvider } from "./CartContext";
+import { AuthProvider } from "./AuthContext";
 import Menu from "./Menu";
 import Catalog from "./Catalog";
 import Cart from "./Cart";
@@ -29,9 +30,11 @@ function AppContent() {
 export default function App() {
   return (
     <ThemeProvider>
-      <CartProvider>
-        <AppContent />
-      </CartProvider>
+      <AuthProvider>
+        <CartProvider>
+          <AppContent />
+        </CartProvider>
+      </AuthProvider>
     </ThemeProvider>
   );
 }

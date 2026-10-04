@@ -27,8 +27,17 @@ export function ThemeProvider({ children }) {
         borderRadius: "4px"
     };
 
+    const inputStyles = {
+        backgroundColor: theme === "dark" ? "#333" : "#fff",
+        color: theme === "dark" ? "#fff" : "#000",
+        border: theme === "dark" ? "1px solid #555" : "1px solid #ccc",
+        padding: "6px 10px",
+        borderRadius: "4px",
+        outline: "none"
+    };
+
     return (
-        <ThemeContext.Provider value={{ theme, toggleTheme, appStyles, buttonStyles }}>
+        <ThemeContext.Provider value={{ theme, toggleTheme, appStyles, buttonStyles, inputStyles }}>
             {children}
         </ThemeContext.Provider>
     );
